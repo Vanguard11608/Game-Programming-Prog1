@@ -110,7 +110,7 @@ public class Bhop : MonoBehaviour
     }
 
     private float desiredX;
-    private void look()
+    private void Look()
     {
         float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.fixedDeltaTime * sensMultiplier;
