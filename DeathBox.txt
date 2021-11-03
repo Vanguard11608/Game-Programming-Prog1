@@ -1,3 +1,4 @@
+// Make sure to convert to .CS file 
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -5,8 +6,12 @@ using UnityEngine.SceneManagement;
 public class DeathBox : MonoBehaviour{
 
 void OnCollisionEnter(Collision coll){
-if (coll.gameObject.tag == "player"){
-SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+//if colliding with game object with the tag player
+if (coll.gameObject.tag == "player"){ 
+
+//load current active scene
+SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
 	}
    }
 }
