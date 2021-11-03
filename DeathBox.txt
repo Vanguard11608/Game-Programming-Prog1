@@ -1,0 +1,12 @@
+using System;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class DeathBox : MonoBehaviour{
+
+void OnCollisionEnter(Collision coll){
+if (coll.gameObject.tag == "player"){
+SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
+   }
+}
