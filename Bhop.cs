@@ -75,8 +75,8 @@ public class Bhop : MonoBehaviour
         if (y > 0 && yMag > maxSpeed) y = 0;
         if (y < 0 && yMag < -maxSpeed) y = 0;
 
-        float multiplier = 1f, multiplierV = 0f;
-
+        float multiplier = 1f, multiplierV = 1f;
+    //Movement in Air
         if (!grounded) {
             multiplier = 0.5f;
             multiplierV = 0.5f;
@@ -91,9 +91,10 @@ public class Bhop : MonoBehaviour
         {
             readyToJump = false;
 
-                rb.AddForce(Vector2.up * jumpForce * 1.5f);
+            rb.AddForce(Vector2.up * jumpForce * 1.5f);
             rb.AddForce(normalVector * jumpForce * 0.5f);
 
+            //If Jump whilst fall reset Y Axis vel.
             Vector3 vel = rb.velocity;
             if (rb.velocity.y < 0.5f)
                 rb.velocity = new Vector3(vel.x, 0, vel.z);
@@ -129,11 +130,11 @@ public class Bhop : MonoBehaviour
     {
         if (!grounded || jumping) return;
 
-        if (Mathf.Abs(mag.x) > threshold && Mathf.Abs(x) < 0.05f || (mag.x < -threshold && x > 0) || (mag.x > threshold && x < 0))
+        if (Math.Abs(mag.x) > threshold && Math.Abs(x) < 0.05f || (mag.x < -threshold && x > 0) || (mag.x > threshold && x < 0))
         {
             rb.AddForce(moveSpeed * orientation.transform.right * Time.deltaTime * -mag.x * counterMovement);
         }
-        if (Mathf.Abs(mag.y) > threshold && Mathf.Abs(y) < 0.05f || (mag.y < -threshold && y > 0) || (mag.y > threshold && y < 00))
+        if (Math.Abs(mag.y) > threshold && Math.Abs(y) < 0.05f || (mag.y < -threshold && y > 0) || (mag.y > threshold && y < 0))
         {
             rb.AddForce(moveSpeed * orientation.transform.forward * Time.deltaTime * -mag.y * counterMovement);
         }
