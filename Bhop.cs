@@ -41,6 +41,15 @@ public class Bhop : MonoBehaviour
         playerScale = transform.localScale;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        gameObject.tag = "Player";
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+    if (other.tag == "Enemy")
+    {
+    CheckPoint.GetActiveCheckPointPosition();
+        }
     }
 
     private void FixedUpdate(){
