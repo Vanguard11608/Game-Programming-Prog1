@@ -33,7 +33,7 @@ public class CheckPoint : MonoBehaviour
         }
     }
 
-    public static Vector 3 GetActiveCheckPointPosition()
+    public static Vector3 GetActiveCheckPointPosition()
     {
         //This sets plater to default pos if not checkpoint will probaly replace with restart scene code
         Vector3 result = new Vector3(0, 0, 0);
