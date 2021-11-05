@@ -1,5 +1,4 @@
-// Make sure to convert to .CS file 
-//use Check Point script to for when you fall of of platforms
+//Restarts the Entire Level 
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;

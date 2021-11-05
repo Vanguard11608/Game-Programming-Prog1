@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class LoadScene : MonoBehaviour
 {
 
-    public void LoadNextScene()
-    {
+    void OnCollisionEnter(Collision coll){
+        if (coll.gameObject.tag == "Player"){ 
+    
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
