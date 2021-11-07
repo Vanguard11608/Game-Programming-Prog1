@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CheckPoint : MonoBehaviour
+public class CheckPoint
 {
     // check if point active
     public bool activated = false;
